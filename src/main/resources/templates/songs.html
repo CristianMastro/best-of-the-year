@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Songs</title>
+</head>
+<body>
+<div>
+<h1 th:text="'Best of the year of ' + ${name} + '!'"/>
+</div>
+<div th:text="|Le mie canzoni preferite di questo anno sono: ${s1.titolo}, ${s2.titolo}|"></div>
+</body>
+</html>
