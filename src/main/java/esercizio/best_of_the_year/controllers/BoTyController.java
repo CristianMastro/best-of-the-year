@@ -34,7 +34,7 @@ public class BoTyController {
     }
 
 
-@GetMapping("/bestOfTheYear")//nome url//
+@GetMapping("/")//nome url//
 public String bestOfTheYear(Model model, @RequestParam(name = "name") String name) {
     model.addAttribute("name", name);
     return "bestOfTheYear";//pagina html di ritorno//
