@@ -2,7 +2,6 @@ package esercizio.best_of_the_year.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,49 +39,35 @@ public String bestOfTheYear(Model model, @RequestParam(name = "name") String nam
     return "bestOfTheYear";//pagina html di ritorno//
 }
 
-@GetMapping("/moviesList")
+@GetMapping("/movies")
 public String moviesList(Model model) {
 
     List<Movie> bestMovies = getBestMovies();
+    
+    /*con stringa 
     String movieTitles = bestMovies.stream().map(Movie::getTitolo).collect(Collectors.joining(", "));
-
     model.addAttribute("movieTitles", movieTitles);
-    return "moviesList";
-}
+    */
 
-@GetMapping("/songList")
-public String songsList(Model model) {
-
-    List<Song> bestSongs = getBestSongs();
-    String songTitles = bestSongs.stream().map(Song::getTitolo).collect(Collectors.joining(", "));
-
-    model.addAttribute("bestSong", songTitles);
-    return "songList";
-}
-
-@GetMapping("/movies")
-public String movies(Model model, @RequestParam(name = "name") String name) {
-
-    Movie f1 = new Movie(1, "Heretic");
-    Movie f2 = new Movie(2, "Follemente");
-
-    model.addAttribute("name", name);
-    model.addAttribute("f1", f1);
-    model.addAttribute("f2", f2);
+    model.addAttribute("bestMovies", bestMovies);
     return "movies";
 }
 
 @GetMapping("/songs")
-public String songs(Model model, @RequestParam(name = "name") String name) {
+public String songsList(Model model) {
 
-    Song s1 = new Song(1, "ReawakeR - Lisa");
-    Song s2 = new Song(2, "Shadowborn - Sawano Hiroyuki");
+    List<Song> bestSongs = getBestSongs();
 
-    model.addAttribute("name", name);
-    model.addAttribute("s1", s1); 
-    model.addAttribute("s2", s2); 
+    /*con stringa 
+    String songTitles = bestSongs.stream().map(Song::getTitolo).collect(Collectors.joining(", "));
+    model.addAttribute("bestSong", songTitles);
+    */
+
+
+    model.addAttribute("bestSong", bestSongs);
     return "songs";
 }
+
 
 @GetMapping("/songs/{id}")
 public String songId(@PathVariable int id, Model model) {
