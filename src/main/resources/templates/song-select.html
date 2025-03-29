@@ -1,0 +1,10 @@
+<h1>Canzone selezionata</h1>
+
+<div th:if="${song}">
+    <p>ID: <span th:text="${id}"></span></p>
+    <p>Titolo: <span th:text="${song.titolo}"></span></p>
+</div>
+
+<div th:unless="${song}">
+    <p>Canzone non trovata.</p>
+</div>
