@@ -6,8 +6,7 @@
 </head>
 <body>
     <div th:if="${song}">
-        <p>ID: <span th:text="${id}"></span></p>
-        <p>Titolo: <span th:text="${song.titolo}"></span></p>
+        <p th:text="${song.titolo} + ' Anno di pubblicazione: ' + ${song.anno} + ' Genere: ' + ${song.genere}"></p>
     </div>
     
     <div th:unless="${song}">
