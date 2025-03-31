@@ -6,17 +6,21 @@
 </head>
 <body>
     <div th:replace="fragments/header :: headerSito"></div>
-    <h2>I migliori film del mio 2025:</h2>
-    
-    <!--<p th:text="${movieTitles}">Movie Titles</p>   Titoli separati da virgola -->
 
-    <ul class="list-group">
-        <li class="list-group-item" th:each="movie : ${bestMovies}">
-            <a th:href="@{/movies/{id}(id=${movie.id})}">
-                <span th:text="${movie.titolo}"></span>
-            </a>
-        </li>
+    <div class="container">
+        <h2 class="text-center">I migliori film del mio 2025:</h2>
+        
+        <!--<p th:text="${movieTitles}">Movie Titles</p>   Titoli separati da virgola -->
 
+        <div class="container">
+            <ul class="list-group mx-5 text-center">
+                <li class="list-group-item" th:each="movie : ${bestMovies}">
+                    <a th:href="@{/movies/{id}(id=${movie.id})}">
+                        <span th:text="${movie.titolo}"></span>
+                    </a>
+                </li>
+        </div>        
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
