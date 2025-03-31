@@ -1,0 +1,15 @@
+<header th:fragment="headerSito">
+    <div class="container">
+        <ul class="nav nav-pills p-2">
+            <li class="nav-item me-5">
+                <a class="nav-link" th:href="@{/(name='Utente')}">Best of 2k25</a>
+            </li>
+            <li class="nav-item">
+                <a th:href="@{/movies}" class="btn btn-warning px-4 text-primary">Film</a>
+            </li>
+            <li class="nav-item ms-2">
+                <a th:href="@{/songs}" class="btn btn-warning px-2 text-primary">Canzoni</a>
+            </li>
+        </ul>
+    </div>    
+</header>  

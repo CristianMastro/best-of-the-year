@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import esercizio.best_of_the_year.models.Movie;
 import esercizio.best_of_the_year.models.Song;
@@ -34,8 +33,9 @@ public class BoTyController {
 
 
 @GetMapping("/")//nome url//
-public String bestOfTheYear(Model model, @RequestParam(name = "name") String name) {
-    model.addAttribute("name", name);
+public String bestOfTheYear(Model model) {
+    String username = System.getProperty("user.name");//metodo per prendere nome utente locale//
+    model.addAttribute("name", username);
     return "bestOfTheYear";//pagina html di ritorno//
 }
 
