@@ -6,15 +6,18 @@
 </head>
 <body>
     <div th:replace="fragments/header :: headerSito"></div>
-    
-    <div th:if="${movie}">
-        <p th:text="${movie.titolo} + ' Anno di pubblicazione: ' + ${movie.anno}"></p>
-        <p th:text="${movie.descrizione}"></p>
-    </div>
-    
-    <div th:unless="${movie}">
-        <p>Film non trovato.</p>
-    </div>
+
+    <div class="container">
+        <div th:if="${movie}">
+            <p th:text="${movie.titolo} + ' Anno di pubblicazione: ' + ${movie.anno}" class="text-center"></p>
+            <p th:text="${movie.descrizione}"></p>
+        </div>
+        
+        <div th:unless="${movie}">
+            <p>Film non trovato.</p>
+        </div>
+    </div>    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
